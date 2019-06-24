@@ -1,0 +1,8 @@
+$res-small: 576px;
+$res-medium: 768px;
+$res-large: 992px;
+$res-xlarge: 1200px;
+
+@mixin transition-for($property) {
+    transition: $property 0.2s ease-in-out;
+  }

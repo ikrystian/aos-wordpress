@@ -1,0 +1,48 @@
+@import '../../assets/styles/var';
+
+  .menu-main-menu-container {
+    .menu {
+      list-style: none;
+      display: flex;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0.3em 1em;
+      color: var(--nav-links-color);
+      font-size: 1.125rem;
+      text-decoration: none;
+      position: relative;
+      &:hover {
+        color: var(--primary-color);
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+
+      &::after {
+        content: '';
+        height: 2px;
+        background: linear-gradient(to right, #193270 0%, var(--primary-color) 100%);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        bottom: -4px;
+        transition: transform 250ms ease-in;
+      }
+
+      &--current {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+@keyframes nav-line {
+  50% {
+    transforn: translateX(1);
+  }
+}

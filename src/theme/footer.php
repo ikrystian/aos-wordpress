@@ -1,81 +1,65 @@
 <footer class="footer">
-	<section class="categories">
-		<ul>
-			<?php
-				$get_parent_cats = array(
-					'parent' => '0', // get top level categories only
-				);
+      <nav class="footer__nav">
+        <a href="" class="footer__link">POLITYKA PRYWATNOŚCI</a>
+        <a href="" class="footer__link">PLIKI COOKIES</a>
+        <a href="" class="footer__link">MAPA SERWISU</a>
+        <a href="" class="footer__link">DLA MEDIÓW</a>
+        <a href="" class="footer__link">BIULETYN INFORMACJI PUBLICZNEJ</a>
+      </nav>
+    </footer>
+  </div>
+</div>
+  <aside class="sidebar">
 
-				$all_categories = get_categories( $get_parent_cats );// get parent categories
+    <app-calendar></app-calendar>
 
-				foreach ( $all_categories as $single_category ) {
-					// for each category, get the ID
-					$cat_id = $single_category->cat_ID;
+    <ul class="events">
+      <li>
+        <a routerLink="event/1" class="events__items list-event list-event--work">
+          <div class="list-event__date">
+            <span>01</span>maj
+          </div>
+          <div class="list-event__data">
+            <h3 class="list-event__title">Warsztat spin</h3>
+            <span>Data wydarzenia</span>
+            <span>Miejsce wydarzenia</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a routerLink="event/1" class="events__items list-event list-event--fun">
+          <div class="list-event__date">
+            <span>01</span>maj
+          </div>
+          <div class="list-event__data">
+            <h3 class="list-event__title">Warsztat spin</h3>
+            <span>Data wydarzenia</span>
+            <span>Miejsce wydarzenia</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a routerLink="event/1" class="events__items list-event list-event--abc">
+          <div class="list-event__date">
+            <span>01</span>maj
+          </div>
+          <div class="list-event__data">
+            <h3 class="list-event__title">Warsztat spin</h3>
+            <span>Data wydarzenia</span>
+            <span>Miejsce wydarzenia</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </aside>
 
-					echo '<li data-aos="slow-categories" data-aos-offset="0"><h2>' . $single_category->name . '</h2>'; // category name & link
-						echo '<ul class="post-title">';
+</div>
 
-					$query = new WP_Query(
-						array(
-							'cat'            => $cat_id,
-							'posts_per_page' => -1,
-							'order'          => 'ASC',
-						)
-					);
-					while ( $query->have_posts() ) :
-						$query->the_post();
-						echo '<li data-aos="slow-categories" data-aos-offset="0"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
-					endwhile;
-					wp_reset_postdata();
-
-					echo '</ul>';
-					$get_children_cats = array(
-						'child_of' => $cat_id, // get children of this parent using the cat_id variable from earlier
-					);
-
-					$child_cats = get_categories( $get_children_cats );// get children of parent category
-					echo '<ul class="children">';
-					foreach ( $child_cats as $child_cat ) {
-						// for each child category, get the ID
-						$child_id = $child_cat->cat_ID;
-
-						// for each child category, give us the link and name
-						echo '<a href=" ' . get_category_link( $child_id ) . ' ">' . $child_cat->name . '</a>';
-
-							echo '<ul class="post-title">';
-
-						$query = new WP_Query(
-							array(
-								'cat'            => $child_id,
-								'posts_per_page' => -1,
-								'order'          => 'ASC',
-							)
-						);
-						while ( $query->have_posts() ) :
-							$query->the_post();
-							echo '<li data-aos="slow-categories" data-aos-offset="0"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
-							endwhile;
-						wp_reset_postdata();
-
-						echo '</ul>';
-
-					}
-					echo '</ul></li>';
-				} //end of categories logic
-			?>
-		</ul>
-	</section>
-
-	<section class="riangle">
-		<a href="https://www.riangle.com/" target="_blank">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/riangle.svg" alt="Riangle 🔺">
-		</a>
-		<p>
-			<span>Powered by <strong><a href="https://www.riangle.com/" target="_blank">Riangle</a></strong>. <?php bloginfo( 'name' ); ?></span> - &copy; <?php echo date( 'Y' ); ?></p>
-		</p>
-	</section>
-
-</footer>
+<section class="cookie-info">
+  <img src="<?= get_template_directory_uri(); ?>/img/cookie-monster.png" class="cookie-info__monster" alt="">
+  <p>Nasza strona internetowa używa plików cookies. Surykatki zbierają dane statystyczne :) <a href="http://wszystkoociasteczkach.pl/polityka-cookies/">Dowiedz się więcej o ciasteczkach</a></p>
+  <button title="Zamknij ciasteczka" id="close-cookies"><i class="fas fa-times"></i></button>
+</section>
 <?php wp_footer(); ?>
 </body>
 </html>
