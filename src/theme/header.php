@@ -136,7 +136,6 @@
   </section>
 </header>
 <div class="search-bar">
-  <label for="search-text" class="aria-hide">Wpisz szukaną frazę</label>
-  <input type="text" autofocus class="search-bar__input" id="search-text" placeholder="Wpisz szukaną frazę">
+  <?php get_search_form(); ?>
 </div>
 <div class="page-container">

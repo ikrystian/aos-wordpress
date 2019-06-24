@@ -8,8 +8,19 @@
     background-color: var(--search-bar-background);
     display: none;
     border-bottom: 1px solid #dedede;
-  
-    &__input {
+
+    &--opened {
+      display: flex;
+    }
+    form {
+      width: 100%;
+    }
+
+    #searchsubmit {
+      display: none;
+    }
+
+    input[type=text] {
       width: 100%;
       padding: 0.5em 1em;
       font-size: 1rem;
