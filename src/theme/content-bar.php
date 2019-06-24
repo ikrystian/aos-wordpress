@@ -5,26 +5,13 @@
       <a class="short-links__link" (click)="scroll(node.id)">{{ node.innerText }}</a>
     </li>
   </ul>
-
-  <section class="archive">
-    <h3 class="archive__title">Archiwum</h3>
-    <ul class="archive__years">
-      <li>
-        <span><a href="#">2019</a></span>
-        <ul class="archive__months">
-          <li><a href="#">Styczeń</a></li>
-          <li><a href="#">Luty</a></li>
-          <li><a href="#">Marzec</a></li>
-          <li><a href="#">Kwiecień</a></li>
-          <li><a href="#">Maj</a></li>
-        </ul>
-      </li>
-      <li><span><a href="">2018</a></span></li>
-    </ul>
-  </section>
+  
+  <div class="archive">
+  <?php get_sidebar(); ?>
+  </div>
 
   <section class="newsletter-aside">
-    <button class="newsletter-aside__button" (click)="openNewsletterModal()"><span>newsletter</span></button>
+    <button class="newsletter-aside__button show-newsletter"><span>newsletter</span></button>
   </section>
 
   <ul class="social">

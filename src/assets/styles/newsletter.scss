@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Ranga:400,700&display=swap&subset=latin-ext');
+@import 'var';
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media screen and (min-width: $res-large) {
+    flex-direction: row;
+  }
+
+  &:hover {
+    .newsletter__section--image {
+      background-size: 110%;
+    }
+  }
+
+  &__wrapper {
+      display: none;
+
+      &--opened {
+          position: fixed;
+          display: flex;
+          width: 100vw;
+          height: 100vh;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 100;
+      }
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $res-large) {
+      width: 450px;
+      height: 450px;
+    }
+
+    &--image {
+      height: 200px;
+      background-position: center;
+      background-size: 100%;
+      transition: 400ms background-size ease-in-out;
+
+      @media screen and (min-width: $res-large) {
+        height: 450px;
+      }
+
+    }
+  }
+
+  &__data {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+
+    h1 {
+      margin-bottom: 0.5em;
+      font-family: 'Ranga', cursive;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 0.9;
+
+      @media screen and (min-width: $res-large) {
+        font-size: 3rem;
+      }
+    }
+
+    h2 {
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      font-size: 1rem;
+      font-weight: normal;
+      border-bottom: 1px solid #b6b6b6;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 3s ease-in-out;
+    color: #fff;
+
+    @media screen and (min-width: $res-large) {
+      color: #000;
+    }
+
+    &:hover {
+      transform: rotate(960deg);
+    }
+  }
+}
+
+.newsletter-form {
+  margin-top: 2em;
+
+  &__input {
+    font-size: 0.875rem;
+    padding: 0.75em 1em;
+    outline: none;
+    border: 1px solid #b6b6b6;
+    border-right: 0;
+
+    &:focus {
+      border-color: var(--primary-color);
+    }
+  }
+
+  &__button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    text-transform: uppercase;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    @include transition-for(all);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-color);
+      background-color: #fff;
+    }
+  }
+}
+

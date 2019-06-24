@@ -11,7 +11,8 @@
 	gtag('config', 'UA-110577987-1');
 	</script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://kit.fontawesome.com/1d017b6199.js"></script>
 	<?php wp_head(); ?>
 	<style>
 	 body {
@@ -124,14 +125,14 @@
 	wp_nav_menu();
 	?>
     <button class="header__icon" id="toggle-search" title="Szukaj"><i class="fas fa-search"></i></button>
-    <button class="header__icon" (click)="openNewsletterModal()" title="Zapisz się do listy mailingowej"><i class="fas fa-envelope-open-text"></i></button>
+    <button class="header__icon show-newsletter" title="Zapisz się do listy mailingowej"><i class="fas fa-envelope-open-text"></i></button>
   </nav>
   <button class="mobile-menu-button" (click)="toggleNav()">
     <i class="fas fa-bars" *ngIf="!showNav"></i>
     <i class="fas fa-times i-opened" *ngIf="showNav"></i>
   </button>
   <section class="mobile-nav" [ngClass]="{'mobile-nav--opened' : showNav}">
-    <app-nav class="mobile-navigation" (click)="toggleNav()"></app-nav>
+    <app-nav class="mobile-navigation" ></app-nav>
   </section>
 </header>
 <div class="search-bar">

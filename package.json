@@ -44,5 +44,8 @@
 		"postcss-preset-env": "^6.6.0",
 		"stylelint": "^10.1.0",
 		"stylelint-config-standard": "^18.3.0"
+	},
+	"dependencies": {
+		"moment": "^2.24.0"
 	}
 }

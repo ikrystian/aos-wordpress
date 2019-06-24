@@ -397,8 +397,7 @@ body {
   list-style: none;
   padding: 0.5em;
   @media screen and (min-width: $res-large) {
-    height: calc(100vh - 449px);
-    overflow: auto;
+
   }
 
   li {
