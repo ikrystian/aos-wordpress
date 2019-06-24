@@ -1,11 +1,14 @@
 <?php get_header(); ?>
 <!-- container -->
-<div class="container">	
-	<!-- site-content -->
+<div class="container container--flex">	
+<div class="news-page">
+    <?php get_template_part( 'content', 'bar' ); ?>
+  <section class="news-list">
 	<div class="site-content">
 
 		<!-- main-column -->
 		<div class="main-column grid">
+			<ul class="news-list-grid">
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) :
@@ -13,6 +16,7 @@
 					get_template_part( 'content', get_post_format() );
 				endwhile;
 				?>
+			</ul>
 		</div>
 		<!-- /main-column -->
 
@@ -30,6 +34,8 @@
 
 	<?php get_sidebar(); ?>
 </div>
+	</div>
+	</section>
 <!-- /container -->
 
 <?php get_footer(); ?>

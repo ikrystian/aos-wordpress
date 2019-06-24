@@ -7,8 +7,35 @@ Description: WordPressify official theme.
 Version: 1.0
 Tags: responsive, clean, minimal, modern, documentation
 */
-
+:root {
+    --primary-color: #3368e8;
+    --font: 'Ubuntu', sans-serif;
+    --nav-links-color: #2c3845;
+    --header-background: #fff;
+  
+    --home-title-color: #fff;
+  
+    --sidebar-background-color: #f7f8f8;
+    --date-background: #eeb413;
+  
+    --articles-home-background: #fff;
+  
+    --article-title-color: var(--primary-color);
+    --article-meta-color: #727a82;
+  
+    --list-event-border-color: #d0cfcf;
+  
+    --footer-background: #383838;
+    --footer-color: #7f7e7e;
+    --footer-hover-color: #fff;
+  
+    --short-link-color: #2c3845;
+    --short-link-hover-color: #44576b;
+  
+    --search-bar-background: #fff;
+  }
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
 @import 'layout'; 
 @import 'app';
 @import 'nav';
+@import 'news';

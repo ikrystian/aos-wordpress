@@ -55,10 +55,10 @@
 
 </div>
 
-<section class="cookie-info">
+<section class="cookie-info" id="cookie-info">
   <img src="<?= get_template_directory_uri(); ?>/img/cookie-monster.png" class="cookie-info__monster" alt="">
   <p>Nasza strona internetowa używa plików cookies. Surykatki zbierają dane statystyczne :) <a href="http://wszystkoociasteczkach.pl/polityka-cookies/">Dowiedz się więcej o ciasteczkach</a></p>
-  <button title="Zamknij ciasteczka" id="close-cookies"><i class="fas fa-times"></i></button>
+  <button title="Zamknij ciasteczka" id="close-cookies">X</button>
 </section>
 <?php wp_footer(); ?>
 </body>

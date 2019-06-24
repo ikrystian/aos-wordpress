@@ -1,16 +1,18 @@
 <?php
 /*
-Template Name: Home page
+Template Name: Events page
 */
 get_header();
 ?> 
+<div class="container container--flex">
 <div class="news-page">
-    <?php get_template_part( 'help', 'bar' ); ?>
+    <?php get_template_part( 'content', 'bar' ); ?>
   <section class="news-list">
     <h2 class="page-title">Wydarzenia</h2>
 
     <ul>
-      <li *ngFor="let article of news">
+
+      <li>
         <article class="news-news">
           <a href="/event/{{ article.id }}" class="news-news__thumbnail reveal-image" [ngClass]="article.categoryClass">
             <img class="news-news__image" [src]="article.image" alt="">
@@ -34,14 +36,11 @@ get_header();
         </article>
       </li>
     </ul>
-    <app-pagination></app-pagination>
-
-
   </section>
 
 
 </div>
-
+</div>
 
 <?php
 get_footer();

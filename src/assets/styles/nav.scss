@@ -34,10 +34,9 @@
         bottom: -4px;
         transition: transform 250ms ease-in;
       }
-
-      &--current {
-        color: var(--primary-color);
-      }
+    }
+    .current-menu-item a {
+      color: var(--primary-color) !important;
     }
   }
 
