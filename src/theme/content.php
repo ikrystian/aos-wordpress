@@ -3,7 +3,11 @@
 <li>
   <article class="news-news">
     <a href="<?php the_permalink(); ?>" class="news-news__thumbnail reveal-image">
+    <?php if(the_post_thumbnail()): ?>
     <?php the_post_thumbnail( 'small-thumbnail', array('class' => 'news-news__image') ); ?>
+    <?php else: ?>
+    <img src="https://picsum.photos/200/300" alt="" class="news-news__image">
+    <?php endif; ?>
     </a>
     <div class="news-news__data">
       <div class="news-news__date">
